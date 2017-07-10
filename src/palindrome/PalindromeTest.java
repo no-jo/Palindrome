@@ -12,11 +12,27 @@ import org.junit.Test;
 public class PalindromeTest {
 
 	@Test
+	public void singleCharIsPalindrome() {
+		//Given
+		String rawText = "a";
+		//Then
+		assertEquals(true,Palindrome.isPalindrome(rawText));
+	}
+	
+	@Test
 	public void mostPopularPalindromeWithPolishChars() {
 		//Given
 		String rawText = "Kobyła ma mały bok.";
 		//Then
 		assertEquals(true,Palindrome.isPalindrome(rawText));
+	}
+	
+	@Test
+	public void textWithOnlySpecialCharsReturnsNegative() {
+		//Given
+		String rawText = "@#$$% ^";
+		//Then
+		assertEquals(false,Palindrome.isPalindrome(rawText));
 	}
 
 }
