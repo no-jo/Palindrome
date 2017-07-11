@@ -16,7 +16,7 @@ public class Palindrome {
 			return true;
 		} else if (filteredText.charAt(0) == filteredText.charAt(filteredText.length() - 1)) {
 			filteredText = filteredText.substring(1, filteredText.length() - 1);
-			return isPalindrome(filteredText);
+			return isFilteredTextPalindrome(filteredText);
 		} else
 			return false;
 	}
