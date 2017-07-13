@@ -1,7 +1,15 @@
-﻿package palindrome;
+﻿/**
+ * Class palindrome performs full check if given text is a palindrome including specific validation.
+ */
+package palindrome;
 
 public class Palindrome {
 
+/**
+ * Method checking if the text is palindrome which can be invoked on a raw text.
+ * @param rawText
+ * @return
+ */
 	public static boolean isPalindrome(String rawText) {
 		String filteredText = prepareRawText(rawText);
 		if (filteredText.isEmpty()) {

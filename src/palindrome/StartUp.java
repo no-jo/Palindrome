@@ -11,7 +11,6 @@ public class StartUp {
         String text = scan.nextLine();
 		System.out.println(Palindrome.isPalindrome(text));
 		scan.close(); 
-
 	}
 
 }

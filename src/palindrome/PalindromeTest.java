@@ -1,3 +1,6 @@
+/**
+ * Test class for palindrome class.
+ */
 package palindrome;
 
 import static org.junit.Assert.*;
@@ -7,7 +10,7 @@ import org.junit.Test;
 public class PalindromeTest {
 
 	@Test
-	public void singleCharIsPalindrome() {
+	public void shouldReturnTrueForSingleCharacter() {
 		//Given
 		String rawText = "a";
 		//Then
@@ -15,7 +18,7 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void PalindromeWithOddChars() {
+	public void shouldReturnTrueForPalindromeWithOddNumberOfChars() {
 		//Given
 		String rawText = "bab";
 		//Then
@@ -23,9 +26,9 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void PalindromeWithEvenChars() {
+	public void shouldReturnTrueForPalindromeWithEvenNumberOfChars() {
 		//Given
-		String rawText = "Baab";
+		String rawText = "baab";
 		//When
 		boolean result = Palindrome.isPalindrome(rawText);
 		//Then
@@ -33,7 +36,7 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void NotPalindromeWithOddChars() {
+	public void shouldReturnFalseForWordWithOddNumberOfChars() {
 		//Given
 		String rawText = "bac";
 		//Then
@@ -41,23 +44,31 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void NotPalindromeWithEvenChars() {
+	public void shouldReturnFalseForWordWithEvenNumberOfChars() {
 		//Given
-		String rawText = "bacb";
+		String rawText = "lpkl";
 		//Then
 		assertEquals(false,Palindrome.isPalindrome(rawText));
 	}
 		
 	@Test
-	public void PalindromeWithSpecialChars() {
+	public void shouldReturnTrueForPalindromeWithSpecialChars() {
 		//Given
-		String rawText = "!abbA@";
+		String rawText = "!abba@";
 		//Then
 		assertEquals(true,Palindrome.isPalindrome(rawText));
 	}
 	
 	@Test
-	public void textWithOnlySpecialCharsReturnsFalse() {
+	public void shouldReturnTrueForPalindromeWithUpperCase() {
+		//Given
+		String rawText = "vffV";
+		//Then
+		assertEquals(true,Palindrome.isPalindrome(rawText));
+	}
+	
+	@Test
+	public void shouldReturnFalseForTextWithOnlySpecialChars() {
 		//Given
 		String rawText = "@#$$% ^";
 		//Then
@@ -65,7 +76,7 @@ public class PalindromeTest {
 	}
 
 	@Test
-	public void emptyTextReturnsFalse() {
+	public void shouldReturnFalseForEmptyText() {
 		//Given
 		String rawText = "";
 		//Then
@@ -73,7 +84,7 @@ public class PalindromeTest {
 	}
 	
 	@Test
-	public void PalindromeWithPolishChars() {
+	public void shouldReturnTrueForPalindromeWithPolishChars() {
 		//Given
 		String rawText = "Kobyła ma mały bok.";
 		//Then
